@@ -1,3 +1,5 @@
+[![.NET](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet.yml)
+
 # DebugLogger
 This library exports a `DebugLogger`, an implementation of `ILogger` for Debugging purposes, that are:
 - Simple `string` print
@@ -49,6 +51,7 @@ Basically, every time these methods called, their arguments are logged on a `Tex
 ## Limitations
 - The maximum number of arguments that a method in `MethodsWithContextLogging` can have is 7, but can be easily extended.
 - The prefix in Harmony is a class containing only static methods, therefore reading the logger configurations involves some constraints. In the current implementation, configs are available only if there is a field of type `DebugLogger` in the class declaring the method intercepted.
+- You might encounter an exception when trying to patch certain methods belonging to the `System` namespace because (here I guess) they are internally used by Harmony.
 
 ---
 

@@ -9,14 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Check for Version tag in HEAD
-      run: |
-        version="$(git describe --abbrev=0 --match="[0-9]*.[0-9]*.[0-9]*" --candidates 0 @ || echo "not found")"
-        if [[ $version == 'not found' ]]
-        then 
-          exit 1
-        fi
-        echo "VERSION=${version}" >> $GITHUB_ENV
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v1.9.0
       with:
@@ -33,5 +25,3 @@ jobs:
         name: dotnet-test-results
         path: TestResults
       if: ${{ always() }}
-    - name: Publish Package
-      run: dotnet pack src/main/DebugLogger/DebugLogger.csproj -c Release -o out /p:Version=${VERSION}

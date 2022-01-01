@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F71A34F9-F040-4293-9DA4-64E5FBC6F02A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{8E0FD60B-E5FB-4D67-8DA8-A7F74726117C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugLogger", "src\main\DebugLogger\DebugLogger.csproj", "{E49A61D7-2F29-4557-99B9-5650CF5F479D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CFC17EE9-12A4-48C0-A66F-874601E88E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugLogger.Test", "src\test\DebugLogger.Test\DebugLogger.Test.csproj", "{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E49A61D7-2F29-4557-99B9-5650CF5F479D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E49A61D7-2F29-4557-99B9-5650CF5F479D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E49A61D7-2F29-4557-99B9-5650CF5F479D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E49A61D7-2F29-4557-99B9-5650CF5F479D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E0FD60B-E5FB-4D67-8DA8-A7F74726117C} = {F71A34F9-F040-4293-9DA4-64E5FBC6F02A}
+		{E49A61D7-2F29-4557-99B9-5650CF5F479D} = {8E0FD60B-E5FB-4D67-8DA8-A7F74726117C}
+		{CFC17EE9-12A4-48C0-A66F-874601E88E0A} = {F71A34F9-F040-4293-9DA4-64E5FBC6F02A}
+		{35C6B670-5F80-4476-9BEC-3E7A8D3F33A8} = {CFC17EE9-12A4-48C0-A66F-874601E88E0A}
+	EndGlobalSection
+EndGlobal

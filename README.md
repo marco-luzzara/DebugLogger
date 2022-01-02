@@ -1,4 +1,4 @@
-[![.NET](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet.yml)
+[![.NET](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/marco-luzzara/DebugLogger/actions/workflows/dotnet-test.yml)
 
 # DebugLogger
 This library exports a `DebugLogger`, an implementation of `ILogger` for Debugging purposes, that are:

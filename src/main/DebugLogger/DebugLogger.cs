@@ -9,24 +9,14 @@ using System.Reflection;
 public class DebugLogger : ILogger
 {
     private static readonly Harmony harmony = new Harmony(nameof(DebugLogger));
-    private static readonly int MAX_PARAMETERS_SUPPORTED = 7;
-    private static readonly string PREFIX_PATCHER = "ContextLog_";
-    private static readonly MethodInfo[] prefixes = new MethodInfo[MAX_PARAMETERS_SUPPORTED + 1];
+    private static readonly MethodInfo? prefix;
 
     public DebugLoggerConfig Configs { get; }
 
     static DebugLogger()
     {
-        for (int i = 0; i <= MAX_PARAMETERS_SUPPORTED; i++)
-        {
-            var prefixMethodName = PREFIX_PATCHER + i;
-            var prefixMethod = typeof(MethodPatcher).GetMethod(prefixMethodName, 
+        prefix = typeof(MethodPatcher).GetMethod("PrintContext",
                         BindingFlags.NonPublic | BindingFlags.Static);
-            if (prefixMethod == null)
-                throw new NullReferenceException($"{nameof(MethodPatcher)}.{prefixMethodName} has not been found");
-
-            prefixes[i] = prefixMethod;
-        }
     }
 
     public DebugLogger(DebugLoggerConfig configs)
@@ -44,8 +34,7 @@ public class DebugLogger : ILogger
             .Where(m => !harmony.GetPatchedMethods().Contains(m)))
         {
             var parametersCount = m.GetParameters().Length;
-            var prefixMethod = prefixes[parametersCount];
-            harmony.Patch(original: m, prefix: new HarmonyMethod(prefixMethod));
+            harmony.Patch(original: m, prefix: new HarmonyMethod(prefix));
         }
     }
 
